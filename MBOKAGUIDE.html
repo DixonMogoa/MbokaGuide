@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiversePath Career Guidance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 100%);
+        }
+        
+        .diversity-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .diversity-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #3b82f6, #10b981, #ec4899);
+        }
+        
+        .progress-bar {
+            position: relative;
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e2e8f0;
+        }
+        
+        .progress-bar-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 0.5s ease;
+        }
+        
+        .interest-bubble {
+            transition: all 0.3s ease;
+        }
+        
+        .interest-bubble:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .animate-bounce-slow {
+            animation: bounce 3s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+    </style>
+</head>
+<body class="gradient-bg">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center">
+                    <i class="fas fa-route text-blue-500 text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold text-slate-800">DiversePath</h1>
+                    <p class="text-sm text-slate-600">Inclusive Career Guidance System</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <div class="hidden md:flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm">
+                    <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-user-graduate text-green-600"></i>
+                    </div>
+                    <span class="font-medium">Student Portal</span>
+                </div>
+                <button class="px-4 py-2 rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-colors shadow-md">
+                    <i class="fas fa-user mr-2"></i>My Profile
+                </button>
+            </div>
+        </header>
+        
+        <!-- Progress Steps -->
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-lg font-semibold text-slate-800">Your Career Discovery Journey</h2>
+                <span class="text-sm font-medium text-blue-600">Step 1 of 4</span>
+            </div>
+            
+            <div class="relative">
+                <div class="flex justify-between mb-2">
+                    <div class="text-center w-1/4">
+                        <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center mx-auto mb-2">
+                            <span>1</span>
+                        </div>
+                        <span class="text-xs font-medium">Interests</span>
+                    </div>
+                    <div class="text-center w-1/4">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-2">
+                            <span>2</span>
+                        </div>
+                        <span class="text-xs text-slate-500">Skills</span>
+                    </div>
+                    <div class="text-center w-1/4">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-2">
+                            <span>3</span>
+                        </div>
+                        <span class="text-xs text-slate-500">Values</span>
+                    </div>
+                    <div class="text-center w-1/4">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-2">
+                            <span>4</span>
+                        </div>
+                        <span class="text-xs text-slate-500">Results</span>
+                    </div>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress-bar-fill" style="width: 25%"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Interest Selection -->
+            <div class="lg:col-span-2 bg-white rounded-xl shadow-md p-6">
+                <h2 class="text-xl font-semibold mb-6 flex items-center">
+                    <i class="fas fa-heart text-pink-500 mr-3"></i>What are your interests?
+                </h2>
+                
+                <div class="mb-8">
+                    <h3 class="font-medium mb-3 text-slate-700">Academic Subjects</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-blue-100 text-blue-800 hover:bg-blue-200">
+                            Mathematics
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-green-100 text-green-800 hover:bg-green-200">
+                            Biology
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-yellow-100 text-yellow-800 hover:bg-yellow-200">
+                            Literature
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-red-100 text-red-800 hover:bg-red-200">
+                            Physics
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-purple-100 text-purple-800 hover:bg-purple-200">
+                            Chemistry
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-indigo-100 text-indigo-800 hover:bg-indigo-200">
+                            History
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-pink-100 text-pink-800 hover:bg-pink-200">
+                            Art
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-gray-100 text-gray-800 hover:bg-gray-200">
+                            Economics
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="font-medium mb-3 text-slate-700">Hobbies & Extracurriculars</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-blue-100 text-blue-800 hover:bg-blue-200">
+                            Coding
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-green-100 text-green-800 hover:bg-green-200">
+                            Sports
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-yellow-100 text-yellow-800 hover:bg-yellow-200">
+                            Music
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-red-100 text-red-800 hover:bg-red-200">
+                            Debate
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-purple-100 text-purple-800 hover:bg-purple-200">
+                            Robotics
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-indigo-100 text-indigo-800 hover:bg-indigo-200">
+                            Volunteering
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-pink-100 text-pink-800 hover:bg-pink-200">
+                            Photography
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-gray-100 text-gray-800 hover:bg-gray-200">
+                            Writing
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="font-medium mb-3 text-slate-700">Career Interests</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-blue-100 text-blue-800 hover:bg-blue-200">
+                            Technology
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-green-100 text-green-800 hover:bg-green-200">
+                            Healthcare
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-yellow-100 text-yellow-800 hover:bg-yellow-200">
+                            Education
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-red-100 text-red-800 hover:bg-red-200">
+                            Business
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-purple-100 text-purple-800 hover:bg-purple-200">
+                            Engineering
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-indigo-100 text-indigo-800 hover:bg-indigo-200">
+                            Arts
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-pink-100 text-pink-800 hover:bg-pink-200">
+                            Social Work
+                        </button>
+                        <button class="interest-bubble px-4 py-2 rounded-full bg-gray-100 text-gray-800 hover:bg-gray-200">
+                            Science
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="flex justify-end">
+                    <button class="px-6 py-2 rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-colors shadow-md">
+                        Continue <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Diversity Spotlight -->
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <h2 class="text-xl font-semibold mb-6 flex items-center">
+                    <i class="fas fa-globe-americas text-green-500 mr-3"></i>Diversity Spotlight
+                </h2>
+                
+                <div class="space-y-4">
+                    <!-- Diversity Card 1 -->
+                    <div class="diversity-card bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mr-3">
+                                <i class="fas fa-microscope text-blue-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">Women in STEM</h3>
+                                <p class="text-sm text-slate-600">Explore groundbreaking female scientists and their contributions to STEM fields.</p>
+                                <a href="#" class="text-xs text-blue-600 hover:underline mt-1 block">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Diversity Card 2 -->
+                    <div class="diversity-card bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-purple-50 flex items-center justify-center mr-3">
+                                <i class="fas fa-code text-purple-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">Neurodiversity in Tech</h3>
+                                <p class="text-sm text-slate-600">How different thinking styles create innovation in technology careers.</p>
+                                <a href="#" class="text-xs text-purple-600 hover:underline mt-1 block">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Diversity Card 3 -->
+                    <div class="diversity-card bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center mr-3">
+                                <i class="fas fa-briefcase-medical text-green-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">Men in Nursing</h3>
+                                <p class="text-sm text-slate-600">Breaking stereotypes in healthcare professions.</p>
+                                <a href="#" class="text-xs text-green-600 hover:underline mt-1 block">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Diversity Card 4 -->
+                    <div class="diversity-card bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-yellow-50 flex items-center justify-center mr-3">
+                                <i class="fas fa-paint-brush text-yellow-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">Cultural Diversity in Arts</h3>
+                                <p class="text-sm text-slate-600">How global perspectives shape creative careers.</p>
+                                <a href="#" class="text-xs text-yellow-600 hover:underline mt-1 block">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 pt-4 border-t border-gray-200">
+                    <h3 class="font-medium mb-3">Diversity Resources</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-blue-600 hover:underline flex items-center">
+                            <i class="fas fa-external-link-alt mr-2 text-xs"></i>Scholarships for underrepresented groups
+                        </a></li>
+                        <li><a href="#" class="text-blue-600 hover:underline flex items-center">
+                            <i class="fas fa-external-link-alt mr-2 text-xs"></i>Mentorship programs
+                        </a></li>
+                        <li><a href="#" class="text-blue-600 hover:underline flex items-center">
+                            <i class="fas fa-external-link-alt mr-2 text-xs"></i>Professional associations
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Suggested Careers Preview -->
+        <div class="bg-white rounded-xl shadow-md p-6 mt-8">
+            <h2 class="text-xl font-semibold mb-6 flex items-center">
+                <i class="fas fa-lightbulb text-yellow-500 mr-3 animate-bounce-slow"></i>Potential Career Matches
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Career Card 1 -->
+                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mr-3">
+                            <i class="fas fa-laptop-code text-blue-500"></i>
+                        </div>
+                        <h3 class="font-medium">Software Developer</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">Design and develop computer applications with diverse teams.</p>
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full">Tech</span>
+                        <span class="text-slate-500">Median salary: $110k</span>
+                    </div>
+                </div>
+                
+                <!-- Career Card 2 -->
+                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center mr-3">
+                            <i class="fas fa-heartbeat text-green-500"></i>
+                        </div>
+                        <h3 class="font-medium">Physician Assistant</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">Practice medicine on teams with physicians in diverse healthcare settings.</p>
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full">Healthcare</span>
+                        <span class="text-slate-500">Median salary: $115k</span>
+                    </div>
+                </div>
+                
+                <!-- Career Card 3 -->
+                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center mr-3">
+                            <i class="fas fa-chalkboard-teacher text-purple-500"></i>
+                        </div>
+                        <h3 class="font-medium">Educational Consultant</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">Help schools implement inclusive teaching practices.</p>
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded-full">Education</span>
+                        <span class="text-slate-500">Median salary: $65k</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 text-center">
+                <button class="px-6 py-2 rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-colors shadow-md">
+                    <i class="fas fa-search mr-2"></i>Discover More Careers
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Interest selection functionality
+        const interestBubbles = document.querySelectorAll('.interest-bubble');
+        
+        interestBubbles.forEach(bubble => {
+            bubble.addEventListener('click', function() {
+                this.classList.toggle('bg-blue-100');
+                this.classList.toggle('bg-blue-600');
+                this.classList.toggle('text-blue-800');
+                this.classList.toggle('text-white');
+                
+                // You could add more logic here to track selected interests
+            });
+        });
+        
+        // Simulate career matching based on selected interests
+        // In a real application, this would connect to a backend service
+        function updateCareerSuggestions() {
+            // This would analyze selected interests and update the career matches
+            console.log("Updating career suggestions based on selected interests...");
+            
+            // Example: If STEM interests are selected, show more STEM careers
+            // This is just a placeholder for demonstration
+        }
+        
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DiversePath Career Guidance System initialized');
+            
+            // You could load user data from localStorage or a backend here
+            /*
+            const userData = localStorage.getItem('careerProfile');
+            if (userData) {
+                // Load existing profile
+            }
+            */
+        });
+    </script>
+</body>
+</html>
